@@ -1,0 +1,14 @@
+# General
+.DS_Store
+node_modules/
+
+# Specific to create-react-app (problem2)
+problem2/node_modules/
+problem2/build/
+
+# Logs
+logs/
+*.log
+
+# System Files
+Thumbs.db
