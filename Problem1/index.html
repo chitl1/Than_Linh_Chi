@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <p>**Input**: `n` - any integer</p>
+      <p>**Output**: `return` - summation to `n`</p>
+      <div>
+        <label>Input : </label>
+        <input type="number" id="idnumber" />
+        <p id="error-message" style="color: red"></p>
+      </div>
+      <br />
+      <button onclick="handleSubmit()">Calculate</button>
+      <p id="waya"></p>
+      <p id="wayb"></p>
+      <p id="wayc"></p>
+    </div>
+    <script src="./myscript.js"></script>
+    <script>
+      const validateInput = (input) => {
+        if (/^[1-9]\d*$/.test(input)) {
+          document.getElementById("error-message").textContent = ""; // Xóa thông báo lỗi nếu đúng
+          document.getElementById("idnumber").style.borderColor = ""; // Xóa viền đỏ nếu đúng
+        } else {
+          document.getElementById("error-message").textContent =
+            "Vui lòng nhập số nguyên dương.";
+          edocument.getElementById("idnumber").style.borderColor = "red"; // Tô đỏ viền textbox nếu sai
+          return false;
+        }
+      };
+      const handleSubmit = () => {
+        var idnumberValue = document.getElementById("idnumber").value;
+        validateInput(idnumberValue);
+        var idnumber = Number(idnumberValue);
+        var suma = 0;
+        var sumb = 0;
+        var sumc = 0;
+        if (idnumber > 0) {
+          suma = sum_to_n_a(idnumber);
+          sumb = sum_to_n_b(idnumber);
+          sumc = sum_to_n_c(idnumber);
+        }
+        document.getElementById(
+          "waya"
+        ).innerHTML = `sum_to_n_a(${idnumber}) = ${suma}`;
+        document.getElementById(
+          "wayb"
+        ).innerHTML = `sum_to_n_b(${idnumber}) = ${sumb}`;
+        document.getElementById(
+          "wayc"
+        ).innerHTML = `sum_to_n_c(${idnumber}) = ${sumc}`;
+      };
+    </script>
+  </body>
+</html>
